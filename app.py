@@ -111,11 +111,13 @@ def main():
             print(f"Нужный товар есть  в пункте {request.from_}")
         else:
             print(f"Нужного товара нет в пункте {request.from_}")
+            continue
 
         if from_.items[request.product] >= request.ammount:
             print(f"Нужное количество есть  в пункте {request.from_}")
         else:
             print(f"В пункте {request.from_} не хватает {request.ammount - from_.items[request.product]}")
+            continue
 
         if to.get_free_space <= request.ammount:
             print(f"В пункте {request.to} не достаточно свободного места")
